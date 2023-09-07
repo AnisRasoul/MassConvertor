@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header> <a href="index.html">MassConvertor</a></header>
+    <h2>Welcome to MassConvertor: Your Ultimate Unit Conversion Companion</h2>
+        <p id="Welcome">
+        Are you tired of wrestling with complex unit conversions when working with different measurement systems? Look no further! MassConvertor is your go-to destination for seamless and accurate conversions between various units of mass.
+        
+        Navigating the intricacies of mass conversion can be a daunting task, especially when you're dealing with grams, kilograms, milligrams, or even tons. Whether you're a student, a professional in the sciences, or just someone who needs to convert mass measurements in your daily life, MassConvertor is here to simplify the process for you.
+        
+        Our user-friendly interface and powerful conversion engine provide you with quick and precise results. Say goodbye to the hassle of manual calculations and hello to effortless mass conversions.</p>
+    <div class="container">
+    <label for="quantity"> Enter Quantity:</label>
+    <input type="number" id="quantity" placeholder="Enter value" step="any">
+<BR></BR>
+    <label for="fromUnit">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;From Unit:&nbsp;&nbsp;&nbsp;</label>
+    <select id="fromUnit">
+        <option value="mg">Milligrams (mg)</option>
+        <option value="g">Grams (g)</option>
+        <option value="kg">Kilograms (kg)</option>
+        <option value="t">Metric Tons (t)</option>
+    </select>
+ <BR></BR>
+    <label for="toUnit">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;To Unit:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+    <select id="toUnit">
+        <option value="mg">Milligrams (mg)</option>
+        <option value="g">Grams (g)</option>
+        <option value="kg">Kilograms (kg)</option>
+        <option value="t">Metric Tons (t)</option>
+    </select>
+    <button onclick="convertUnits()">Convert</button>
+    
+    <p id="res">Result &nbsp;: <span id="result"></span></p>
+</div>
+    <footer><p>This website was made by Anis Rasoul, Contact me on Anis.Rasoul@etu.univ-batna2.dz <br>
+     University of Batna 2 ComputerScience Deparment, Batna-Algeria
+    </p></footer>
+    <script src="script.js"></script>
+</body>
+</html>

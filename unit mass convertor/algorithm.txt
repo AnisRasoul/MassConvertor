@@ -1,0 +1,48 @@
+
+double ConvertMass(double quantity, string fromUnit, string toUnit) {
+    unordered_map<string, double> conversionFactors = {
+        {"mg_to_g", 0.001},
+        {"g_to_mg", 1000},
+        {"g_to_kg", 0.001},
+        {"kg_to_g", 1000},
+        {"kg_to_t", 0.001},
+        {"t_to_kg", 1000}
+    };
+
+    if (fromUnit == toUnit) {
+        return quantity;  // No conversion needed, return the input value
+    }
+
+    string conversionKey = fromUnit + "_to_" + toUnit;
+
+    if (conversionFactors.find(conversionKey) == conversionFactors.end()) {
+        cout << "Invalid units" << endl;  // Invalid conversion
+        return -1.0;  // Return an error value
+    }
+
+    double conversionFactor = conversionFactors[conversionKey];
+    double result = quantity * conversionFactor;
+    return result;
+}
+
+int main() {
+    double quantity;
+    string fromUnit, toUnit;
+
+    cout << "Enter quantity: ";
+    cin >> quantity;
+
+    cout << "Enter source unit (mg, g, kg, t): ";
+    cin >> fromUnit;
+
+    cout << "Enter target unit (mg, g, kg, t): ";
+    cin >> toUnit;
+
+    double convertedAmount = ConvertMass(quantity, fromUnit, toUnit);
+
+    if (convertedAmount != -1.0) {
+        cout << quantity << " " << fromUnit << " is equal to " << convertedAmount << " " << toUnit << endl;
+    }
+
+    return 0;
+}
